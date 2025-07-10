@@ -1,0 +1,19 @@
+/* nav.css */
+nav.navbar {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav.navbar a:hover {
+  color: #000;
+}
