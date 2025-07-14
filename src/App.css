@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Edmund Italic';
+  src: url('/public/fonts/Edmund-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Edmund Regular';
+  src: url('/public/fonts/Edmund-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Scypha';
+  src: url('/public/fonts/Scypha-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 57px); /* Adjusted for navbar height */
+}

@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div>
+    <div className="page_container">
       <h1>About OOPER CASE TYPE</h1>
     </div>
   )

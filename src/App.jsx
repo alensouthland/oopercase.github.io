@@ -6,6 +6,7 @@ import UX from './pages/UX.jsx'
 import Contact from './pages/Contact.jsx'
 
 import './styles/nav.css'
+import './App.css'
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 function Typefaces() {
   return (
-    <div>
+    <div className="page_container">
       <h1>Typefaces OOPER CASE TYPE</h1>
     </div>
   )
