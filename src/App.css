@@ -22,6 +22,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Departure Mono Regular';
+  src: url('/public/fonts/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('/public/fonts/ArcadeMalayalamDisplay-Bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,5 +48,5 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 57px); /* Adjusted for navbar height */
+    min-height: calc(100vh - 71.5px); /* Adjusted for navbar height */
 }

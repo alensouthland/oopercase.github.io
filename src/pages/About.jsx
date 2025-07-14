@@ -1,7 +1,7 @@
 function About() {
   return (
     <div className="page_container">
-      <h1>About OOPER CASE TYPE</h1>
+      <h1 style={{ fontFamily: 'Edmund Italic, sans-serif' }}>Hello, I'm Alen</h1>
     </div>
   )
 }

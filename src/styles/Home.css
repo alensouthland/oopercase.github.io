@@ -1,0 +1,12 @@
+/* src/pages/Home.css */
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Scypha', sans-serif;
+  padding: 2rem;
+}

@@ -16,16 +16,20 @@ const Navbar = () => {
       </div>
 
       <div className="nav-center">
-        <Link to="/typefaces">Typefaces</Link>
-        <Link to="/ux">UX</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/typefaces">Fonts</Link>
+        <Link to="/ux">UX Design</Link>
         <Link to="/about">About</Link>
       </div>
 
       <div className="nav-right">
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
+        <label className="switch">
+          <input
+            type="checkbox"
+            onChange={toggleTheme}
+            checked={theme === 'dark'}
+          />
+          <span className="slider round"></span>
+        </label>
       </div>
     </nav>
   );
