@@ -10,7 +10,7 @@ function About() {
         fontFamily: 'Departure Mono Regular, monospace',
         fontSize: '0.9rem',
         color: 'var(--text-color)',
-        borderTop: '1px solid var(--text-color)',
+        borderTop: '1px solid var(--border-color)',
         opacity: 0.8
         }}>
         <p style={{ marginBottom: '1rem', fontFamily: 'Scypha, sans-serif', fontSize: '1rem' }}>
