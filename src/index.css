@@ -12,13 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+}
+
+[data-theme='light'] {
   --bg-color: #ffffff;
-  --text-color: #111111;
+  --text-color: #000000;
   --link-color: grey;
   --border-color: lightgray;
   --button-bg-color: #f0f0f0;
 }
-
 [data-theme='dark'] {
   --bg-color: #111111;
   --text-color: #ffffff;
@@ -47,7 +49,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--text-color);
 }
 
 h1 {

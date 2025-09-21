@@ -43,7 +43,7 @@ nav.navbar a {
 }
 
 nav.navbar a:hover {
-  color: #000;
+  color: var(--text-color);
 }
 
 .nav-logo {
