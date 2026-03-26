@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: 'VerumSans';
-  src: url('public/fonts/Scypha-Regular.woff2') format('woff2');
+  src: url('public/fonts/VerumSans-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
@@ -142,7 +142,7 @@
 .home__specimen {
   font-size: clamp(3.5rem, 5vw, 7rem);
   line-height: 1.1;
-  letter-spacing: -0.025em;
+  /* letter-spacing: -0.025em; */
   color: var(--text-color);
   margin-bottom: 1.625rem;
 
