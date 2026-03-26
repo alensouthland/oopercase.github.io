@@ -1,7 +1,7 @@
 function About() {
   return (
     <div className="page_container">
-      <h1 style={{ fontFamily: 'Edmund Italic, sans-serif' }}>Hello, I'm Alen</h1>
+      <h1 style={{ fontFamily: 'Edmund, sans-serif' }}>Hello, I'm Alen</h1>
 
       <footer style={{
         marginTop: '4rem',
@@ -14,7 +14,7 @@ function About() {
         opacity: 0.8
         }}>
         <p style={{ marginBottom: '1rem', fontFamily: 'Scypha, sans-serif', fontSize: '1rem' }}>
-          Vibe-coded with ❤️ using React and ChatGPT.
+          Vibe-coded with ❤️ using React with Claude.
         </p>
       </footer>
 

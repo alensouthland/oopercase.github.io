@@ -38,7 +38,6 @@ nav.navbar {
 nav.navbar a {
   text-decoration: none;
   color: var(--link-color);
-  letter-spacing: 0.01em;
   transition: color 0.3s;
 }
 

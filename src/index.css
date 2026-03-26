@@ -16,14 +16,18 @@
 
 [data-theme='light'] {
   --bg-color: #ffffff;
+  --bg-hover-color: #f7f7f7;
   --text-color: #000000;
+  --text-hover-color: #1a1a1a;
   --link-color: grey;
   --border-color: lightgray;
   --button-bg-color: #f0f0f0;
 }
 [data-theme='dark'] {
   --bg-color: #111111;
-  --text-color: #ffffff;
+  --bg-hover-color: #1a1a1a;
+  --text-color: #f4f4f4;
+  --text-hover-color: #e0e0e0;
   --link-color: grey;
   --border-color: rgb(74, 74, 74);
   --button-bg-color: #252525;

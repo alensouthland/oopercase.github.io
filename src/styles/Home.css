@@ -1,12 +1,206 @@
 /* src/pages/Home.css */
 
-.home-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: 'Scypha', sans-serif;
-  padding: 2rem;
+/* ═══════════════════════════════════════════════════════════════════════════
+   HOME.CSS — Ooper Case Type
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── @font-face declarations ───────────────────────────────────────────────
+   Replace each src path with your actual file name from /public/fonts/.
+   Add or remove blocks to match your typefaces.
+   Use the same font-family string as `family` in the Home.jsx array.
+   ─────────────────────────────────────────────────────────────────────────*/
+
+@font-face {
+  font-family: 'Edmund';
+  src: url('public/fonts/Edmund-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VerumSans';
+  src: url('public/fonts/Scypha-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ElimText';
+  src: url('public/fonts/ElimtextVF.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ArcadeDisplay';
+  src: url('public/fonts/ArcadeMalayalamDisplay-BoldSVG.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OoperSlab';
+  src: url('public/fonts/Edmund-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/*──────────────────────────────────────────────────────────────────────────── */
+
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+
+.home {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.home__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.625rem 2.5rem;
+  border-bottom: 0.5px solid #c8c8c8;
+}
+
+.home__mark {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home__tagline {
+  font-size: 0.75rem;
+  color: #999;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+/* ── Typeface list ───────────────────────────────────────────────────────── */
+
+.home__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home__face {
+  border-bottom: 0.5px solid #c8c8c8;
+  padding: 2rem 2.5rem 2.75rem;
+  cursor: default;
+  transition: background 0.25s ease;
+  overflow: hidden;
+}
+
+.home__face:hover,
+.home__face.is-hovered {
+  background: var(--bg-hover-color);
+}
+
+
+/* ── Meta row ────────────────────────────────────────────────────────────── */
+
+.home__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  margin-bottom: 1.125rem;
+}
+
+.home__index {
+  font-size: 0.6875rem;
+  color: #bbb;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  min-width: 1.75ch;
+}
+
+.home__name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.home__styles {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  color: #aaa;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+/* ── Specimen ────────────────────────────────────────────────────────────── */
+
+.home__specimen {
+  font-size: clamp(3.5rem, 5vw, 7rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--text-color);
+  margin-bottom: 1.625rem;
+
+  transform: translateX(0);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease;
+}
+
+.home__face.is-hovered .home__specimen {
+  transform: translateX(0.4rem);
+  color: var(--text-hover-color);
+}
+
+
+/* ── Alphabet ────────────────────────────────────────────────────────────── */
+
+.home__alphabet {
+  font-size: 0.8125rem;
+  letter-spacing: 0.18em;
+  color: #888;
+  line-height: 1.6;
+  font-variant-ligatures: none;
+
+  transition: color 0.25s ease;
+}
+
+.home__face.is-hovered .home__alphabet {
+  color: #555;
+}
+
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.home__footer {
+  padding: 1.625rem 2.5rem;
+  font-size: 0.6875rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .home__header,
+  .home__face,
+  .home__footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .home__tagline {
+    display: none;
+  }
+
+  .home__specimen {
+    font-size: clamp(2.75rem, 15vw, 5rem);
+    letter-spacing: -0.015em;
+  }
 }

@@ -11,13 +11,14 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-left">
         <Link to="/">
-          <img src={Logo} alt="OOPER CASE TYPE" className="nav-logo" />
+          <img src={Logo} alt="OOPER CASE TYPE" className="nav-logo" /> &nbsp;
+            <span className="home__mark">Ooper Case Type</span>
         </Link>
       </div>
 
-      <div className="nav-center">
-        <Link to="/typefaces">Fonts</Link>
-        <Link to="/ux">UX Design</Link>
+      <div className="nav-center home__mark">
+        <Link to="/">Fonts</Link>
+        {/* <Link to="/ux">UX Design</Link> */}
         <Link to="/about">About</Link>
       </div>
 
