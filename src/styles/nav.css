@@ -8,7 +8,7 @@ nav.navbar {
   border-bottom: 1px solid var(--border-color);
   background-color: transparent;
   color: var(--link-color);
-  font-family: 'Scypha', sans-serif;
+  font-family: 'VerumSans', sans-serif;
 }
 
 /* Left: Home */
@@ -50,7 +50,6 @@ nav.navbar a:hover {
   object-fit: contain;
   transition: filter 0.3s ease;
 }
-
 
 /* Theme toggle button */
 .theme-toggle {

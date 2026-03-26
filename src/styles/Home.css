@@ -8,15 +8,9 @@
    Replace each src path with your actual file name from /public/fonts/.
    Add or remove blocks to match your typefaces.
    Use the same font-family string as `family` in the Home.jsx array.
-   These declarations can be moved to App.css if you prefer, but keeping them here keeps Home self-contained.
    ─────────────────────────────────────────────────────────────────────────*/
 
-@font-face {
-  font-family: 'OoperSlab';
-  src: url('public/fonts/Edmund-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
+/* These declarations can be moved to App.css if you prefer, but keeping them here keeps Home self-contained. */
 
 /*──────────────────────────────────────────────────────────────────────────── */
 
