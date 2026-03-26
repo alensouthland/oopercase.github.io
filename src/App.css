@@ -30,9 +30,9 @@
 }
 
 @font-face {
-  font-family: 'ArcadeDisplay';
-  src: url('/public/fonts/ArcadeMalayalamDisplay-BoldSVG.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'NerVariable';
+  src: url('/public/fonts/IDCNerVariableVF.woff2') format('woff2');
+  font-variation-settings: "wdth" 470;
   font-display: swap;
 }
 
