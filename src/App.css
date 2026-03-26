@@ -24,14 +24,14 @@
 
 @font-face {
   font-family: 'ElimText';
-  src: url('public/fonts/ElimtextVF.woff') format('woff');
+  src: url('/public/fonts/ElimtextVF.woff') format('woff');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'ArcadeDisplay';
-  src: url('public/fonts/ArcadeMalayalamDisplay-BoldSVG.woff2') format('woff2');
+  src: url('/public/fonts/ArcadeMalayalamDisplay-BoldSVG.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
