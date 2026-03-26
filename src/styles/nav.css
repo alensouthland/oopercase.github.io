@@ -46,7 +46,7 @@ nav.navbar a:hover {
 }
 
 .nav-logo {
-  height: 32px;
+  height: 24px;
   object-fit: contain;
   transition: filter 0.3s ease;
 }
@@ -70,7 +70,7 @@ nav.navbar a:hover {
 
 /* Invert the logo in dark mode */
 [data-theme="dark"] .nav-logo {
-  filter: invert(1);
+  filter: invert(0.9);
 }
 
 .switch {

@@ -21,6 +21,7 @@
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--text-color);
+  font-family: 'VerumSans', sans-serif;
 }
 
 

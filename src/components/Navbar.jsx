@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-left">
         <Link to="/">
-          <img src={Logo} alt="OOPER CASE TYPE" className="nav-logo" /> &nbsp;
+          <img src={Logo} alt="OOPER CASE TYPE" className="nav-logo" /> &nbsp;&nbsp;
             <span className="home__mark">Ooper Case Type</span>
         </Link>
       </div>
