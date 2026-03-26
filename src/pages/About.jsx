@@ -13,7 +13,7 @@ function About() {
         borderTop: '1px solid var(--border-color)',
         opacity: 0.8
         }}>
-        <p style={{ marginBottom: '1rem', fontFamily: 'Scypha, sans-serif', fontSize: '1rem' }}>
+        <p style={{ marginBottom: '1rem', fontFamily: 'VerumSans, sans-serif', fontSize: '1rem' }}>
           Vibe-coded with ❤️ using React with Claude.
         </p>
       </footer>

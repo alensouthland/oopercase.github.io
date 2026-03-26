@@ -8,35 +8,8 @@
    Replace each src path with your actual file name from /public/fonts/.
    Add or remove blocks to match your typefaces.
    Use the same font-family string as `family` in the Home.jsx array.
+   These declarations can be moved to App.css if you prefer, but keeping them here keeps Home self-contained.
    ─────────────────────────────────────────────────────────────────────────*/
-
-@font-face {
-  font-family: 'Edmund';
-  src: url('public/fonts/Edmund-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'VerumSans';
-  src: url('public/fonts/VerumSans-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ElimText';
-  src: url('public/fonts/ElimtextVF.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ArcadeDisplay';
-  src: url('public/fonts/ArcadeMalayalamDisplay-BoldSVG.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'OoperSlab';
