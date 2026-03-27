@@ -81,7 +81,7 @@ export default function Home() {
                 />
                 <span className="home__slider-value">{fontSize[face.id]}px</span>
               </div>
-              <span className="home__styles">{face.styles}&thinsp;Styles</span>
+              <span className="home__styles">{face.styles}&nbsp;Styles</span>
             </div>
 
             {/* ── Editable specimen ── */}
