@@ -60,10 +60,12 @@ export default function Home() {
           >
             {/* ── Meta row ── */}
             <div className="home__meta">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: '135px'}}>
-                <span className="home__index">{face.id}</span>
-                <span className="home__name">{face.name}</span>
-              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, width: '135px' }}>
+                <span className="home__index" style={{ flexShrink: 0 }}>{face.id}</span>
+                <span className="home__name" style={{ flex: 1, minWidth: 0 }}>
+                {face.name}
+              </span>
+            </div>
               
               <div className="home__slider-wrap">
                 <span className="home__slider-label">Aa</span>

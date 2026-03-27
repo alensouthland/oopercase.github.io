@@ -51,6 +51,11 @@
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  height: 1rem;
   color: var(--text-color);
   font-family: 'VerumSans', sans-serif;
 }
