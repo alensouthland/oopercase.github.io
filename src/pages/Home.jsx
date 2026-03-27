@@ -35,7 +35,7 @@ const typefaces = [
 const PANGRAM = 'The five boxing wizards jump quickly.'
 
 const DESKTOP_SIZE = 72
-const MOBILE_SIZE  = 50
+const MOBILE_SIZE  = 42
 const MIN_SIZE     = 24
 const MAX_SIZE     = 160
 
