@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Edmund Italic';
-  src: url('/public/fonts/Edmund-Italic.woff2') format('woff2');
+  src: url('/fonts/Edmund-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'Edmund';
-  src: url('/public/fonts/Edmund-Regular.woff2') format('woff2');
+  src: url('/fonts/Edmund-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'VerumSans';
-  src: url('/public/fonts/VerumSans-Regular.woff2') format('woff2');
+  src: url('/fonts/VerumSans-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,14 +24,14 @@
 
 @font-face {
   font-family: 'ElimText';
-  src: url('/public/fonts/ElimtextVF.woff') format('woff');
+  src: url('/fonts/ElimtextVF.woff') format('woff');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'NerVariable';
-  src: url('/public/fonts/IDCNerVariableVF.woff2') format('woff2');
+  src: url('/fonts/IDCNerVariableVF.woff2') format('woff2');
   font-variation-settings: "wdth" 470;
   font-display: swap;
 }
@@ -39,12 +39,24 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .page_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 71.5px); /* Adjusted for navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100dvh - 57px);
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+/* Responsive page container */
+@media (max-width: 480px) {
+  .page_container {
+    padding: 1.5rem 1rem;
+    justify-content: flex-start;
+    padding-top: 3rem;
+  }
 }

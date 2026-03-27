@@ -6,20 +6,31 @@ nav.navbar {
   align-items: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid var(--border-color);
-  background-color: transparent;
+  background-color: var(--bg-color);
   color: var(--link-color);
   font-family: 'VerumSans', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Left: Home */
-.nav-left {
-  flex: 1;
-}.nav-left a {
+.home__mark {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Left */
+.nav-left { flex: 1; }
+.nav-left a {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
-/* Center: Other links */
+/* Center: desktop only */
 .nav-center {
   flex: 1;
   display: flex;
@@ -27,65 +38,39 @@ nav.navbar {
   gap: 1.5rem;
 }
 
-/* Right: Toggle */
+/* Right */
 .nav-right {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* All links */
+/* Links */
 nav.navbar a {
   text-decoration: none;
   color: var(--link-color);
   transition: color 0.3s;
 }
-
-nav.navbar a:hover {
-  color: var(--text-color);
-}
+nav.navbar a:hover { color: var(--text-color); }
 
 .nav-logo {
   height: 24px;
   object-fit: contain;
   transition: filter 0.3s ease;
 }
+[data-theme="dark"] .nav-logo { filter: invert(0.9); }
 
-/* Theme toggle button */
-.theme-toggle {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.1s ease;
-}
-
-.theme-toggle:hover {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-}
-
-/* Invert the logo in dark mode */
-[data-theme="dark"] .nav-logo {
-  filter: invert(0.9);
-}
-
+/* ── Theme toggle ─────────────────────────────────────────────────────────── */
 .switch {
   position: relative;
   display: inline-block;
   width: 48px;
   height: 24px;
+  flex-shrink: 0;
 }
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
+.switch input { opacity: 0; width: 0; height: 0; }
 .slider {
   position: absolute;
   cursor: pointer;
@@ -94,7 +79,6 @@ nav.navbar a:hover {
   transition: 0.4s;
   border-radius: 24px;
 }
-
 .slider:before {
   position: absolute;
   content: '';
@@ -106,11 +90,89 @@ nav.navbar a:hover {
   transition: 0.4s;
   border-radius: 50%;
 }
+input:checked + .slider { background-color: #333; }
+input:checked + .slider:before { transform: translateX(24px); }
 
-input:checked + .slider {
-  background-color: #333;
+/* ── Hamburger button — hidden on desktop ─────────────────────────────────── */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-burger span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.nav-burger.is-open span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.nav-burger.is-open span:last-child  { transform: translateY(-3.25px) rotate(-45deg); }
+
+/* ── Mobile drawer ────────────────────────────────────────────────────────── */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: min(75vw, 280px);
+  background-color: var(--bg-color);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 6.25rem 2rem 2rem;
+  gap: 2rem;
+  z-index: 99;
+
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-drawer.is-open { transform: translateX(0); }
+.nav-drawer a {
+  font-family: 'VerumSans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.nav-drawer a:hover { color: var(--link-color); }
+
+/* ── Overlay ──────────────────────────────────────────────────────────────── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 98;
+  cursor: pointer;
 }
 
-input:checked + .slider:before {
-  transform: translateX(24px);
+/* ── Breakpoint: collapse center links, show hamburger ───────────────────── */
+@media (max-width: 640px) {
+  nav.navbar {
+    padding: 1rem 1.25rem;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .nav-burger {
+    display: flex;
+  }
+
+  .home__mark {
+    display: none;
+  }
 }

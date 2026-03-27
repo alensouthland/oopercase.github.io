@@ -30,23 +30,26 @@ const typefaces = [
     styles: 3,
     specimen: 'Thrikkakara',
   },
-  // {
-  //   id: '05',
-  //   name: 'Ooper Slab',
-  //   family: 'OoperSlab',
-  //   styles: 5,
-  //   specimen: 'Typography',
-  // },
 ]
- 
-const ALPHABET = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
- 
+
+const PANGRAM = 'The five boxing wizards jump quickly.'
+
+const DESKTOP_SIZE = 72
+const MOBILE_SIZE  = 50
+const MIN_SIZE     = 24
+const MAX_SIZE     = 160
+
+const getDefaultSize = () =>
+  window.matchMedia('(max-width: 480px)').matches ? MOBILE_SIZE : DESKTOP_SIZE
+
 export default function Home() {
-  const [hovered, setHovered] = useState(null)
- 
+  const [hovered, setHovered]   = useState(null)
+  const [fontSize, setFontSize] = useState(
+    () => Object.fromEntries(typefaces.map(f => [f.id, getDefaultSize()]))
+  )
+
   return (
     <main className="home">
- 
       <ul className="home__list">
         {typefaces.map((face) => (
           <li
@@ -55,29 +58,57 @@ export default function Home() {
             onMouseEnter={() => setHovered(face.id)}
             onMouseLeave={() => setHovered(null)}
           >
+            {/* ── Meta row ── */}
             <div className="home__meta">
-              <span className="home__index">{face.id}</span>
-              <span className="home__name">{face.name}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: '135px'}}>
+                <span className="home__index">{face.id}</span>
+                <span className="home__name">{face.name}</span>
+              </div>
+              
+              <div className="home__slider-wrap">
+                <span className="home__slider-label">Aa</span>
+                <input
+                  type="range"
+                  className="home__slider"
+                  min={MIN_SIZE}
+                  max={MAX_SIZE}
+                  step={1}
+                  value={fontSize[face.id]}
+                  onChange={e =>
+                    setFontSize(prev => ({ ...prev, [face.id]: Number(e.target.value) }))
+                  }
+                  onMouseEnter={() => setHovered(face.id)}
+                />
+                <span className="home__slider-value">{fontSize[face.id]}px</span>
+              </div>
               <span className="home__styles">{face.styles}&thinsp;Styles</span>
             </div>
- 
+
+            {/* ── Editable specimen ── */}
             <div
               className="home__specimen"
-              style={{ fontFamily: `'${face.family}', serif` }}
+              style={{
+                fontFamily: `'${face.family}', serif`,
+                fontSize: `${fontSize[face.id]}px`,
+              }}
+              contentEditable
+              suppressContentEditableWarning
+              spellCheck={false}
             >
               {face.specimen}
             </div>
- 
+
+            {/* ── Pangram ── */}
             <div
-              className="home__alphabet"
+              className="home__pangram"
               style={{ fontFamily: `'${face.family}', serif` }}
             >
-              {ALPHABET}
+              {PANGRAM}
             </div>
           </li>
         ))}
       </ul>
- 
+
       <footer className="home__footer">
         <span>© {new Date().getFullYear()} Ooper Case Type</span>
       </footer>
