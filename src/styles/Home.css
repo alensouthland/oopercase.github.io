@@ -70,6 +70,7 @@
 .home__specimen {
   line-height: 0.92;
   letter-spacing: -0.02em;
+  font-feature-settings: "liga" 1, "calt" 1;
   color: var(--text-color);
   margin-bottom: 1.25rem;
   outline: none;
