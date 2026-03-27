@@ -178,6 +178,8 @@
   color: var(--link-color);
   letter-spacing: 0.01em;
   transition: color 0.2s ease;
+  font-feature-settings: "liga" 1, "calt" 1;
+  font-variation-settings: "wdth" 470;
 }
 
 .home__face.is-hovered .home__pangram {
