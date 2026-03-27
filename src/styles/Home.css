@@ -219,6 +219,10 @@
     margin-bottom: 1rem;
   }
 
+  .home__slider-wrap {
+    max-width: 100px;
+  }
+
   .home__face.is-hovered .home__specimen {
     transform: none;
   }
