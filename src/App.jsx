@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
-import Typefaces from './pages/Typefaces.jsx';
+import Typefaces from './pages/Writings.jsx';
 import UX from './pages/UX.jsx';
 import Contact from './pages/Contact.jsx';
 

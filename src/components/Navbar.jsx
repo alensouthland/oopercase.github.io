@@ -39,6 +39,7 @@ const Navbar = () => {
         {/* Desktop center links */}
         <div className="nav-center home__mark">
           <Link to="/">Fonts</Link>
+          <Link to="/writings">Writings</Link>
           <Link to="/about">About</Link>
         </div>
 
