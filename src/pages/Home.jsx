@@ -60,7 +60,7 @@ export default function Home() {
           >
             {/* ── Meta row ── */}
             <div className="home__meta">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', maxWidth: '135px'}}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', width: '135px'}}>
                 <span className="home__index">{face.id}</span>
                 <span className="home__name">{face.name}</span>
               </div>
