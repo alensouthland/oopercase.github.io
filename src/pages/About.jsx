@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="page_container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0rem', padding: '0rem 1rem 2rem 1rem' }}>
+    <div className="page_container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0rem', padding: '1rem' }}>
       <h1 style={{ fontFamily: 'Edmund, serif' }}>Hello, I'm <span> <a style={{ color: 'var(--text-color)', borderBottom: '2px solid var(--text-color)' }} href="https://alen.framer.website">Alen</a></span></h1>
 
       <footer style={{
