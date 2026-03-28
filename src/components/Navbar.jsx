@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </div>
 
-        <div className="nav-right">
+        <div className="nav-center">
           {/* Theme toggle — always visible */}
           <label className="switch">
             <input
@@ -69,6 +69,7 @@ const Navbar = () => {
       {/* Mobile drawer */}
       <div className={`nav-drawer${menuOpen ? ' is-open' : ''}`}>
         <Link to="/" onClick={close}>Fonts</Link>
+        <Link to="/writings" onClick={close}>Writings</Link>
         <Link to="/about" onClick={close}>About</Link>
       </div>
 
