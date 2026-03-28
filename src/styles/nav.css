@@ -62,38 +62,141 @@ nav.navbar a:hover { color: var(--text-color); }
 }
 [data-theme="dark"] .nav-logo { filter: invert(0.9); }
 
-/* ── Theme toggle ─────────────────────────────────────────────────────────── */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 48px;
-  height: 24px;
+
+/* ── Sun / Moon theme toggle ──────────────────────────────────────────────── */
+
+.theme-toggle {
+  --size: 1.25rem;
+  --icon-fill:       hsl(210 10% 30%);
+  --icon-fill-hover: hsl(210 10% 10%);
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  width:  var(--size);
+  height: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
   flex-shrink: 0;
 }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 24px;
+
+.theme-toggle:focus { outline: none; }
+.theme-toggle:focus-visible { outline: 2px solid var(--border-color); }
+
+[data-theme="dark"] .theme-toggle {
+  --icon-fill:       hsl(210 10% 70%);
+  --icon-fill-hover: hsl(210 15% 90%);
 }
-.slider:before {
-  position: absolute;
-  content: '';
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+
+.theme-toggle:is(:hover, :focus-visible) {
+  --icon-fill: var(--icon-fill-hover);
 }
-input:checked + .slider { background-color: #333; }
-input:checked + .slider:before { transform: translateX(24px); }
+
+/* Make touch targets bigger on coarse-pointer devices */
+@media (hover: none) {
+  .theme-toggle {
+    --size: 2.75rem;
+  }
+}
+
+.theme-toggle > svg {
+  width:  100%;
+  height: 100%;
+  stroke-linecap: round;
+}
+
+/* ── Sun and Moon SVG ─────────────────────────────────────────────────────── */
+
+.sun-and-moon > .moon,
+.sun-and-moon > .sun,
+.sun-and-moon > .sun-beams {
+  transform-origin: center center;
+}
+
+/* Fill / stroke */
+.sun-and-moon > .sun,
+.sun-and-moon > .moon {
+  fill: var(--icon-fill);
+}
+
+.sun-and-moon > .sun-beams {
+  stroke:       var(--icon-fill);
+  stroke-width: 2px;
+}
+
+/* ── Dark mode state ──────────────────────────────────────────────────────── */
+
+/* Scale up sun circle (becomes the moon body) */
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+
+/* Hide beams */
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+
+/* Shift mask circle into view to create crescent */
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translateX(-7px);
+}
+
+/* Use cx property directly where supported (avoids transform stacking) */
+@supports (cx: 1px) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transform: translateX(0);
+    cx: 17px;
+  }
+}
+
+/* ── Animations (respect reduced-motion) ─────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Sun circle — elastic bounce in, quick out */
+  .sun-and-moon > .sun {
+    transition: transform 0.5s cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  }
+
+  /* Beams — slightly bouncier, plus fade */
+  .sun-and-moon > .sun-beams {
+    transition:
+      transform 0.5s cubic-bezier(0.5, 1.5, 0.75, 1.25),
+      opacity   0.5s cubic-bezier(0.25, 0, 0.3, 1);
+  }
+
+  /* Moon mask circle */
+  .sun-and-moon > .moon > circle {
+    transition: transform 0.5s cubic-bezier(0.25, 0, 0.3, 1);
+  }
+
+  @supports (cx: 1px) {
+    .sun-and-moon > .moon > circle {
+      transition: cx 0.5s cubic-bezier(0.25, 0, 0.3, 1);
+    }
+  }
+
+  /* Switching TO dark: quicker, less bounce */
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transition-timing-function: cubic-bezier(0.25, 0, 0.3, 1);
+    transition-duration: 0.25s;
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transform: rotateZ(-25deg);
+    transition-duration: 0.15s;
+  }
+}
+
 
 /* ── Hamburger button — hidden on desktop ─────────────────────────────────── */
+
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -116,11 +219,12 @@ input:checked + .slider:before { transform: translateX(24px); }
   transition: transform 0.25s ease, opacity 0.25s ease;
   transform-origin: center;
 }
-/* Animate to X when open */
-.nav-burger.is-open span:first-child { transform: translateY(3.25px) rotate(45deg); }
+.nav-burger.is-open span:first-child { transform: translateY(3.25px)  rotate(45deg);  }
 .nav-burger.is-open span:last-child  { transform: translateY(-3.25px) rotate(-45deg); }
 
+
 /* ── Mobile drawer ────────────────────────────────────────────────────────── */
+
 .nav-drawer {
   position: fixed;
   top: 0;
@@ -134,7 +238,6 @@ input:checked + .slider:before { transform: translateX(24px); }
   padding: 6.25rem 2rem 2rem;
   gap: 2rem;
   z-index: 99;
-
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -149,7 +252,9 @@ input:checked + .slider:before { transform: translateX(24px); }
 }
 .nav-drawer a:hover { color: var(--link-color); }
 
+
 /* ── Overlay ──────────────────────────────────────────────────────────────── */
+
 .nav-overlay {
   position: fixed;
   inset: 0;
@@ -158,7 +263,9 @@ input:checked + .slider:before { transform: translateX(24px); }
   cursor: pointer;
 }
 
-/* ── Breakpoint: collapse center links, show hamburger ───────────────────── */
+
+/* ── Breakpoint: collapse to hamburger ───────────────────────────────────── */
+
 @media (max-width: 640px) {
   nav.navbar {
     padding: 1rem 1.25rem;
