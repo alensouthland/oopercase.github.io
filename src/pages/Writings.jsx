@@ -1,8 +1,8 @@
 function Writings() {
   return (
     <div className="page_container">
-      <h1>Writings by OOPER CASE TYPE</h1>
-      <p style={{fontFamily: 'Scypha, sans-serif', fontSize: '1rem'}}>Yes, these fonts you see were made by me 😄</p>
+      <h1 style={{maxWidth: '40ch', letterSpacing: '-0.001em', lineHeight: '1.4', textWrap: 'pretty'}}>What has been will be again, what has been done will be done again; there is nothing new under the sun.</h1>
+      <p style={{fontFamily: 'VerumSans, sans-serif', fontSize: '1rem', textWrap: 'pretty'}}>(Links to research papers will be updated soon.)</p>
     </div>
   )
 }

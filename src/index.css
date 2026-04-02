@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'VerumSans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -57,13 +57,13 @@ a:hover {
 }
 
 h1 {
-  font-family: 'Edmund Regular', sans-serif;
+  font-family: 'Edmund', sans-serif;
   font-size: 2.5rem;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
 p {
-  font-family: 'Edmund Regular', sans-serif;
+  font-family: 'Edmund', sans-serif;
   font-size: 1.2rem;
   color: var(--text-color);
   line-height: 1.6;

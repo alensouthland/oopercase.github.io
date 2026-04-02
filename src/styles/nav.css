@@ -44,7 +44,7 @@ nav.navbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 /* Links */
@@ -60,13 +60,13 @@ nav.navbar a:hover { color: var(--text-color); }
   object-fit: contain;
   transition: filter 0.3s ease;
 }
-[data-theme="dark"] .nav-logo { filter: invert(0.9); }
+[data-theme="dark"] .nav-logo { filter: invert(0); }
 
 
 /* ── Sun / Moon theme toggle ──────────────────────────────────────────────── */
 
 .theme-toggle {
-  --size: 1.25rem;
+  --size: 1.1rem;
   --icon-fill:       hsl(210 10% 30%);
   --icon-fill-hover: hsl(210 10% 10%);
 
@@ -101,7 +101,7 @@ nav.navbar a:hover { color: var(--text-color); }
 /* Make touch targets bigger on coarse-pointer devices */
 @media (hover: none) {
   .theme-toggle {
-    --size: 1.55rem;
+    --size: 2.75rem;
   }
 }
 
@@ -261,6 +261,40 @@ nav.navbar a:hover { color: var(--text-color); }
   background: rgba(0, 0, 0, 0.05);
   z-index: 98;
   cursor: pointer;
+}
+
+/* ── Font tester icon ─────────────────────────────────────────────────────── */
+
+.nav-tester {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-tester-icon {
+  height: 1.5rem;
+  width:  1.5rem;
+  object-fit: contain;
+  transition: filter 0.2s ease, rotate 0.5s ease-out;
+}
+
+[data-theme="light"] .nav-tester-icon {
+  filter: invert(0);
+}
+
+.nav-tester:hover .nav-tester-icon {
+  filter: drop-shadow(1px 2px 2px #99999900);
+  rotate: -10deg;
+  transition: filter 0.2s ease, rotate 0.3s ease-in-out;
+}
+
+[data-theme="dark"] .nav-tester-icon {
+  filter: none;
+}
+
+[data-theme="dark"] .nav-tester:hover .nav-tester-icon {
+  filter: drop-shadow(1px 2px 2px #99999900);
 }
 
 

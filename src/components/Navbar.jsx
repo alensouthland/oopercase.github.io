@@ -39,6 +39,18 @@ const Navbar = () => {
         </div>
 
         <div className="nav-right">
+          {/* Font tester link */}
+          <a
+            href="https://oopr-fonttester.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-tester"
+            title="Font Tester"
+          >
+            <img src="/src/assets/OOPR_Tester.png" alt="Font Tester" className="nav-tester-icon" />
+          </a>
+
+          {/* Sun/moon theme toggle */}
           <ThemeToggle />
 
           <button
