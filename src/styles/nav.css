@@ -273,8 +273,8 @@ nav.navbar a:hover { color: var(--text-color); }
 }
 
 .nav-tester-icon {
-  height: 1.5rem;
-  width:  1.5rem;
+  height: 1.4rem;
+  width:  1.4rem;
   object-fit: contain;
   transition: filter 0.2s ease, rotate 0.5s ease-out;
 }
