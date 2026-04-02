@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import Logo from '../assets/OOPR_Logo.png';
+import TesterLogo from '../assets/OOPR_Tester.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ const Navbar = () => {
             className="nav-tester"
             title="Font Tester"
           >
-            <img src="/OOPR_Tester.png" alt="Font Tester" className="nav-tester-icon" />
+            <img src={TesterLogo} alt="Font Tester" className="nav-tester-icon" />
           </a>
 
           {/* Sun/moon theme toggle */}
