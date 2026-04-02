@@ -47,7 +47,7 @@ const Navbar = () => {
             className="nav-tester"
             title="Font Tester"
           >
-            <img src="/src/assets/OOPR_Tester.png" alt="Font Tester" className="nav-tester-icon" />
+            <img src="./src/assets/OOPR_Tester.png" alt="Font Tester" className="nav-tester-icon" />
           </a>
 
           {/* Sun/moon theme toggle */}
